@@ -1,0 +1,210 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopify Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./app.css" />
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <!-- Logo -->
+            <img src="https://crushingit.tech/hackathon-assets/shopify-icon-desktop.svg" alt="Shopify Icon" aria-label="Shopify Logo">
+        </div>
+    
+        <div class="search_bar">
+            <span><img src="https://crushingit.tech/hackathon-assets/icon-search.svg" alt="Search Icon" aria-label="Search Icon"></span>
+            <input type="search" placeholder="Search" aria-label="Search Input">
+        </div>
+    
+        <div class="profile">
+            <span class="alarm" id="alarmIcon">
+                <img src="https://crushingit.tech/hackathon-assets/icon-bell.svg" alt="Alert Icon" aria-label="Alert Icon">
+            </span>
+            <div class="alarm_submenu" id="alarmSubmenu" aria-hidden="true">
+                <div class="content">
+                    <span>Alerts</span>
+                    <div class="icons">
+                        <img style="margin-right: 10px;" src="https://crushingit.tech/hackathon-assets/icon-filter.svg" alt="Filter Icon">
+                        <img src="https://crushingit.tech/hackathon-assets/icon-check-empty-circle.svg" alt="Check Circle Icon">
+                    </div>
+                </div>
+                <div class="content2"><span>Alerts about your store and account will show here</span></div>
+            </div>
+            
+            <div class="user_deets" id="userDeets">
+                <span class="d">Davii Collections</span>
+                <div class="DC"><span>DC</span></div>
+            </div>
+            <div class="deets_submenu" id="deetsSubmenu" aria-hidden="true">
+                <ul>
+                    <li>
+                        <div class="user_deets2">
+                            <div>
+                                <div class="DC"><span>DC</span></div>
+                                <span style="font-weight: 700; color: black;">Davii Collections</span>
+                            </div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" role="img"><path fill="none" stroke="#3c3c3c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m2.75 8.75l3.5 3.5l7-7.5"/></svg>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="stores">
+                            <img src="https://crushingit.tech/hackathon-assets/icon-store.svg" alt="Store Icon">
+                            <span style="margin-left: .6rem;">All stores</span>
+                        </div>
+                    </li>
+                    <hr>
+                    <li>
+                        Help Center
+                    </li>
+                    <li>
+                        Changelog
+                    </li>
+                    <li>
+                        Community forums
+                    </li>
+                    <li>
+                        Hire a Shopify Partner
+                    </li>
+                    <li>
+                        Keyboard shortcuts
+                    </li>
+                    <hr>
+                    <li>
+                        <div>
+                            <p>David Micheal</p>
+                            <p style="color: #616161;">davidmicheal@gmail.com</p>
+                        </div>
+                    </li>
+                    <li>
+                        Manage account
+                    </li>
+                    <li>
+                        Log out
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+
+    <section class="trial_section" id="trialSection" aria-hidden="true">
+        <div>
+            <span>Extend your trial for $1/month for 3 months on select plans.</span>
+        </div>
+        <div class="trial_cta">
+            <button aria-label="Select a plan">Select a plan</button>
+            <img src="https://crushingit.tech/hackathon-assets/icon-cross.svg" id="closeCta" aria-label="Close" alt="Cancel">
+        </div>
+    </section>
+
+    <section class="tasks_section" id="accordionSection">
+        <p class="tasks_head">Setup guide</p>
+        <img class="arrow_toggle" src="https://crushingit.tech/hackathon-assets/icon-arrow-down.svg" aria-label="Task list dropdown" alt="Task accordion">
+        <p style="margin-top: .3em;">Use this personalized guide to get your store up and running.</p>
+        <div class="_progress">
+            <p id="progressNumber">0/5 completed</p>
+            <!-- Progress bar goes here -->
+            <div id="progressBar"><div class="progress"></div></div>
+        </div>
+    
+        <!-- The accordion of tasks -->
+        
+        <div class="task_1">
+            <span class="checks" aria-label="Customize your online store">
+                <div class="checksImage"></div>
+                <span class="c1">Customize your online store</span>
+            </span>
+            <div class="task_body">
+                <div class="right_side">
+                    <p>Choose a theme and add your logo, colors, and images to reflect your brand.
+                        <a href="" aria-label="Learn more about customizing your theme">Learn more</a>
+                    </p>
+                    <button aria-label="Customize theme">Customize theme</button>
+                </div>
+                <div class="left_side">
+                    <img src="https://crushingit.tech/hackathon-assets/customise-store.png" aria-label="Customize theme" alt="Customize theme">
+                </div>
+            </div>
+        </div>
+    
+        <div class="task_1">
+            <span class="checks" aria-label="Add your first product">
+                <div class="checksImage"></div>
+                <span class="c1">Add your first product</span>
+            </span>
+            <div class="task_body">
+                <div class="right_side">
+                    <p>Write a description, add photos, and set pricing for the products you plan to sell.
+                        <a href="" aria-label="Learn more about adding your first product">Learn more</a>
+                    </p>
+                    <button aria-label="Add product">Add product</button>  <span class="import">Import product</span>
+                </div>
+                <div class="left_side">
+                    <img src="https://crushingit.tech/hackathon-assets/product.png" aria-label="Add product" alt="Add product">
+                </div>
+            </div>
+        </div>
+    
+        <div class="task_1">
+            <span class="checks" aria-label="Add a custom domain">
+                <div class="checksImage"></div>
+                <span class="c1">Add a custom domain</span>
+            </span>
+            <div class="task_body">
+                <div class="right_side">
+                    <p>Your current domain is 222219.myshopify.com but you can add a custom domain to help customers find your online store.
+                        <a href="" aria-label="Learn more about adding a custom domain">Learn more</a>
+                    </p>
+                    <button aria-label="Add domain">Add domain</button>
+                </div>
+                <div class="left_side">
+                    <img src="https://crushingit.tech/hackathon-assets/website.png" aria-label="Add domain" alt="Add domain">
+                </div>
+            </div>
+        </div>
+    
+        <div class="task_1">
+            <span class="checks" aria-label="Name your store">
+                <div class="checksImage"></div>
+                <span class="c1">Name your store</span>
+            </span>
+            <div class="task_body">
+                <div class="right_side">
+                    <p>Your temporary store name is currently Davii collections. The store name appears in your admin and your online store.
+                        <a href="" aria-label="Learn more about naming your store">Learn more</a>
+                    </p>
+                    <button aria-label="Name store">Name store</button>
+                </div>
+                <div class="left_side">
+                    <img src="https://crushingit.tech/hackathon-assets/name-store.png" aria-label="Name store" alt="Name store">
+                </div>
+            </div>
+        </div>
+    
+        <div class="task_1">
+            <span class="checks" aria-label="Set up a payment provider">
+                <div class="checksImage"></div>
+                <span class="c1">Set up a payment provider</span>
+            </span>
+            <div class="task_body">
+                <div class="right_side">
+                    <p>Choose a payment provider to start accepting payments. You’ll need to create an account with the payment provider and set it up with your Shopify store.
+                        <a href="" aria-label="Learn more about setting up a payment provider">Learn more</a>
+                    </p>
+                    <button aria-label="Set up payment">Set up payment</button>
+                </div>
+                <div class="left_side">
+                    <img src="https://crushingit.tech/hackathon-assets/payment.png" aria-label="Set up payment provider" alt="Set up payment provider">
+                </div>
+            </div>
+        </div>
+    </section>
+<script src="./app.js"></script>
+</body>
+</html>

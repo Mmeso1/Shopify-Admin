@@ -1,0 +1,765 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f1f1f1;
+}
+
+/****************
+* The nav bar *
+***************/
+
+nav{
+    background-color: #1c181d;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    padding: .7rem .9rem;
+}
+
+.logo,
+.search_bar {
+    margin-right: auto; 
+}
+
+/* The logo */
+.logo img{
+    width: 5rem;
+    height: auto;
+}
+
+/* The search bar in the nav */
+.search_bar{
+    position: relative;
+    display: inline-block;
+}
+
+.search_bar input{
+    border: 1px solid #616161;
+    border-radius: 8px;
+    background-color: #322f33;
+    padding: .4rem;
+    padding-left: 30px;
+    width: 27rem;
+    height: 1.8rem;
+    box-sizing: border-box;
+}
+
+.search_bar input:hover{
+    border-color: #e1e1e1;
+}
+
+.search_bar input:focus{
+    border: 2px solid #e3e3e3;
+    box-shadow: none;
+    outline: none;
+}
+
+.search_bar input::placeholder{
+    color: #97938E;
+    font-weight: 300;
+}
+
+/* The search icon */
+.search_bar span > img {
+    filter: invert(70%) sepia(100%) saturate(20%) hue-rotate(0deg);
+    position: absolute;
+    left: 10px;
+    top: 48%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: auto;
+}
+
+/* The last part in the nav with alarm and profile */
+.profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile .alarm{
+    background-color: #322f33;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: .3rem;
+    margin-right: .7rem;
+    position: relative;
+    display: inline-block;
+}
+
+.profile .alarm img{
+    filter: invert(85%) sepia(70%) saturate(30%) hue-rotate(20deg);
+}
+
+.profile .user_deets{
+    color: #e3e3e3;
+    background-color: #322f33;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: .2rem;
+    font-size: 12px;
+    line-height: 140%;
+    position: relative;
+    display: inline-block;
+}
+
+.profile .user_deets .DC{
+    padding: .2rem;
+    padding-top: .3rem;
+    margin-right: -0.2rem;
+    margin-left: .2rem;
+    border-radius: 6px;
+    background-color: #36fba1;
+    color: #219D65;
+    display: inline-block;
+}
+
+.profile .alarm:hover,
+.profile .user_deets:hover {
+    background-color: #616161;
+    cursor: pointer;
+}
+
+.profile .user_deets .DC span:hover {
+    display: inline-block;
+    transform: translateY(1px);
+}
+
+
+/* The sub menus for the alarm and profile icons */
+.alarm_submenu {
+    position: absolute;
+    top: 9%;
+    right: 1%;
+    z-index: 1;
+    border: 1px solid #e1e1e1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 1rem;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+
+
+.alarm_submenu.active {
+    display: block;
+}
+
+.deets_submenu.active {
+    display: block;
+    /* Other styles for the active state */
+}
+.alarm_submenu img{
+    filter: invert(70%) sepia(100%) saturate(20%) hue-rotate(0deg);
+}
+
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.icons {
+    display: flex;
+}
+
+.content2{
+    background-color: #f0f0f0;
+    font-size: 12px;
+    font-weight: 510;
+    padding: 0.8rem;
+    margin-top: 0.8rem;
+    line-height: 140%;
+}
+
+
+/* The profile sub menu */
+
+.deets_submenu {
+    position: absolute;
+    top: 9%;
+    right: 1%;
+    z-index: 1;
+    border: 1px solid #e1e1e1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 21%;
+    display: none;
+}
+
+.deets_submenu ul{
+    list-style: none;
+}
+
+.deets_submenu ul li{
+    font-size: 12.3px;
+    font-weight: 400;
+    line-height: 140%;
+    padding: 0.4rem;
+}
+
+.deets_submenu ul li:hover:not(:first-child):not(:nth-last-child(3)){
+    background-color: #ebebeb;
+    border-radius: 8px;
+    padding: .4em;
+    margin: 0.2rem;
+}
+.deets_submenu ul li:last-child{
+    padding-bottom: 0.4rem;
+}
+
+.deets_submenu ul hr{
+    margin-bottom: 0.4rem;
+    border-color: #ffffff;
+    opacity: 20%;
+}
+
+.deets_submenu ul .stores, 
+.deets_submenu ul .user_deets2{
+    display: flex;
+    align-items: center;
+}
+
+.deets_submenu ul .user_deets2{
+    background-color: #ebebeb;
+    border-radius: 8px;
+    padding: .4em;
+    justify-content: space-between;
+}
+
+.user_deets2 .DC{
+    padding: .3rem;
+    margin-right: 0.3rem;
+    border-radius: 6px;
+    background-color: #36fba1;
+    color: #219D65;
+    font-size: 10px;
+    display: inline-block;
+}
+
+/***************
+ * End of Nav *
+/**************/
+
+/* Responsiveness for nav */
+/* Media query starting from 780px */
+@media (max-width: 780px) {
+    /* Change logo by updating the img source */
+    .logo img {
+        content: url('https://crushingit.tech/hackathon-assets/shopify-icon.svg');
+        width: 2.5rem;
+    }
+
+    /* The search bar */
+    .search_bar input{
+        width: 100%;
+        height: 1.8rem;
+    }
+
+    /* The user's profile */
+    .profile .user_deets .d{
+        display: none;
+    }
+    
+    .profile .user_deets{
+        background-color: transparent;
+        padding: 0;
+    }
+
+    .profile .alarm:hover,
+    .profile .user_deets:hover {
+        background-color: transparent;
+    }
+
+    /* The sub menus */
+    .alarm_submenu {
+        top: 10%;
+        left: 0;
+        right: 0;
+        width: 90%;
+        margin: auto;
+        text-align: center;
+    }
+
+    .deets_submenu {
+        top: 10%;
+        left: 0;
+        right: -10%;
+        margin: auto;
+        width: 80%;
+    }
+}
+
+
+/* ******************
+* The body of the page *
+********************/
+
+/* Trial section */
+
+.trial_section.active{
+    display: none;
+}
+
+.trial_section,
+.tasks_section{
+    font-size: 13px;
+    line-height: 140%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    margin: auto;
+    width: 55%;
+    border: 1px  solid transparent;
+    border-radius: 8px;
+}
+
+.trial_section{
+    margin-top: 2rem;
+    background-color: #1c181d;
+    display: flex;
+    color: #e3e3e3;
+}
+
+
+.trial_cta{
+    display: flex;
+}
+
+.trial_cta img{
+    filter: invert(70%) sepia(100%) saturate(20%) hue-rotate(0deg);
+    cursor: pointer;
+}
+
+.trial_cta button{
+    background-color: #ffffff;
+    color: #1c181d;
+    padding: .4rem .7rem ;
+    font-size: 11.4px;
+    font-weight: bolder;
+    border-radius: 6px;
+    outline: none;
+    border: transparent;
+    width: 110%;
+    margin-right: .9rem;
+}
+
+.trial_cta button:hover{
+    background-color: #f1f1f1;
+}
+
+
+/* Tasks section */
+.tasks_section{
+    margin-top: 1rem;
+    border: 1px solid #e1e1e1;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    position: relative;
+}
+
+.tasks_head{
+    font-weight: bolder;
+}
+  
+.arrow_toggle {
+    position: absolute;
+    right: 2%;
+    top: 8%; 
+    padding: 0.2rem;
+    cursor: pointer;
+  }
+
+.arrow_toggle:hover{
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+
+.tasks_section ._progress{
+    display: flex;
+    margin-top: 1em;
+    /* flex-direction: column; */
+}
+
+.task_1.active{
+    background-color: #ebebeb;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: .2rem;
+    flex-direction: column;
+
+}
+
+.checks{
+    display: flex;
+    align-items: center;
+    text-indent: .8rem;
+    cursor: pointer;
+}
+.c1{
+    margin-left: 0.4rem;
+}
+
+
+.task_1 .checks{
+    font-weight: 600;
+}
+
+.checksImage label{
+    position: relative;
+    width: 100%;
+    max-width: 24px;
+    height: 24px;
+    cursor: pointer;
+    flex-grow: 1;
+  }
+  
+.checksImage label:focus{
+    outline: none;
+    border: none;
+  }
+
+.checksImage input{
+    display: block;
+    position: fixed;
+    right: -10000000000vw;
+  }
+
+
+.checksImage input + span > svg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+.checksImage input + span > svg{
+    opacity: 0;
+    font-weight: lighter;
+    font-size: 10px;
+  }
+
+.checksImage input + span > svg:nth-of-type(1){
+    animation-name: checkSvgAnimation;
+    animation-duration: 70ms;
+    animation-timing-function: linear;
+    opacity: 1;
+  }
+
+.checksImage input + span:hover > svg:nth-of-type(2){
+    opacity: 1;
+  }
+
+.checksImage input:focus > span > svg:nth-of-type(5){
+    opacity: 1;
+  }
+
+.checksImage input:checked + span > svg{
+    animation-name: checkSvgAnimation;
+    animation-duration: 100ms;
+    animation-fill-mode: both;
+  }
+
+.checksImage input:checked + span > svg:nth-of-type(1){
+    opacity: 0;
+  }
+
+.checksImage input:checked + span > svg:nth-of-type(2){
+    animation-delay: 50ms;
+  }
+
+.checksImage input:checked + span > svg:nth-of-type(3){
+    animation-delay: 150ms;
+  }
+
+.checksImage input:checked + span > svg:nth-of-type(4){
+    animation-delay: 230ms;
+  }
+
+.checksImage input:checked + span > svg:nth-of-type(5){
+    animation-delay: 300ms;
+  }
+
+.checksImage input:checked + span > svg:nth-of-type(6){
+    animation-delay: 380ms;
+  }
+
+.checksImage input:checked + span > svg:nth-of-type(7){
+    animation-delay: 450ms;
+  }
+
+.checksImage input:checked + span > svg:nth-of-type(8){
+    animation-delay: 520ms;
+  }
+
+.checksImage input:checked + span > svg:nth-of-type(9){
+    animation-delay: 600ms;
+  }
+
+.checksImage input:checked + span > svg:nth-of-type(10){
+    animation-delay: 700ms;
+    opacity: 1;
+  }
+
+@keyframes checkSvgAnimation {
+     0% {
+      opacity: 0;
+     } 
+     50% {
+      opacity: 1;
+     } 
+     100%{
+      opacity: 1;
+     } 
+  }
+
+.task_body {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-grow: 1; 
+}
+
+.task_body .right_side {
+    flex-grow: 1; 
+    margin: auto;
+    margin-left: 5%;
+}
+
+.task_body p {
+    line-height: 140%;
+    color: #616161;
+    font-weight: 500;
+    display: block;
+}
+
+.task_body a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #3D81DB;
+    font-weight: bolder;
+    display: block;
+}
+
+.task_body .left_side {
+    position: relative;
+}
+
+.task_body .left_side::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px; /* Adjust the height of the fade effect as needed */
+    background: linear-gradient(to bottom, #ebebeb, rgba(235, 235, 235, 1), #ebebeb);
+    /* z-index: 1; */
+}
+
+
+.task_body .right_side button{
+    padding: 0.4rem 0.5rem;
+    border-radius: 6px;
+    color: #fff;
+    background-color: #322f33;
+    font-size: 11px;
+    margin-top: 0.8rem;
+    margin-right: 1rem;
+    letter-spacing: 1px;
+}
+
+.import{
+    font-size: 12px;
+    font-weight: 600;
+    padding: 0.4rem 0.7rem;
+}
+
+.import:hover{
+    background-color: #322f3321;
+    border-radius: 5px;
+    border: 1px solid transparent;
+}
+
+/* Toggling the tasks section */
+.arrow_toggle {
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Add a smooth transition effect */
+}
+
+.arrow_toggle.opened {
+    content: url('https://crushingit.tech/hackathon-assets/icon-arrow-up.svg');
+    top: 2%; 
+}
+
+.arrow_toggle {
+    position: absolute;
+    right: 2%;
+    top: 8%; 
+    padding: 0.2rem;
+    cursor: pointer;
+  }
+
+.checks.active{
+    cursor: default;
+}
+
+.task_1{
+    margin-top: 1.8em;
+    display: none;
+}
+
+.task_1.opened{
+    display: block;
+}
+
+.task_body{
+    display: none;
+}
+
+.task_body.opened{
+    display: block;
+    display: flex;
+}
+
+._progress {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#progressNumber {
+    margin: 0;
+}
+
+#progressBar {
+    width: 10%;
+    max-width: 10%;
+    height: 4px;
+    background-color: #f3f3f3;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-left: .7rem;
+}
+
+#progressBar .progress {
+    height: 100%;
+    background-color: black;
+    width: 0;
+    transition: width 0.3s ease; 
+}
+
+@media (max-width: 780px) {
+    .logo img{
+    width: 2rem;
+    height: auto;
+    }
+
+    .search_bar input{
+        width: 12rem;
+        height: 1.5rem;
+    }
+
+    .profile .alarm{
+    background-color: #322f33;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: .1rem;
+    margin-right: .7rem;
+    position: relative;
+    display: inline-block;
+    }
+
+
+    .tasks_section,
+    .trial_section{
+        border: transparent;
+        border-radius: 0;
+        box-shadow: none;
+        width: 100%; 
+        max-width: none;
+    }
+
+    .tasks_section{
+        margin-bottom: .8rem;
+    }
+
+    .task_1, .right_side a{
+        font-size: 12px;
+    }
+
+    .checks{
+        padding-top: .7rem;
+    }
+
+    svg{
+        width: 20px;
+    }
+
+   
+    .task_body {
+        flex-direction: row; 
+        justify-content: center;
+    }
+
+    .task_body .right_side {
+        display: block;
+        padding: .9rem;
+    }
+    
+    .task_body .right_side button{
+        padding: 0.3rem 0.5rem;
+        font-size: 10.5px;
+        letter-spacing: 0;
+    }
+
+    .task_body .left_side{
+        display: none;
+    }
+
+    .trial_section{
+        display: block;
+    }
+
+    .trial_cta button{
+        padding: .3rem .4rem ;
+        border-radius: 5px;
+        font-size: 11px;
+        width: 6rem;
+        margin-top: .6rem;
+        margin-right: .9rem;
+    }
+
+    .trial_section span{
+        font-size: 12px;
+    }
+
+    .trial_cta{
+     justify-content: space-between;
+    }
+
+    .trial_cta img{
+        transform: translateY(-20px);
+        width: 20px;
+    }
+
+    #progressBar {
+        width: 18%;
+        max-width: 18%;
+        min-width: 18%;
+    }
+    
+}
